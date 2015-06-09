@@ -1,0 +1,150 @@
+{{<govuk_template}}
+
+{{$head}}
+  {{>includes/elements_head}}
+
+
+	<script type="text/javascript" src="/public/javascripts/selection-buttons.js"></script>
+
+	<script type="text/javascript" src="/public/javascripts/jquery-1.11.0.min.js"></script>
+
+	<script type="text/javascript" src="/public/javascripts/application.js"></script>
+
+	<script type="text/javascript" src="/public/javascripts/postcodes.min.js"></script>
+
+
+{{/head}}
+
+
+{{$propositionHeader}}
+  {{>includes/govuk_drivingprop}}
+{{/propositionHeader}}
+
+{{$headerClass}}with-proposition{{/headerClass}}
+
+
+{{$content}}
+
+<link href="/public/stylesheets/application.css" media="screen" rel="stylesheet" type="text/css" />
+
+<link href="/public/stylesheets/numberplate.css" media="screen" rel="stylesheet" type="text/css" />
+
+
+
+<main id="content" role="main" style="padding-bottom:0">
+
+
+
+
+	<div>
+	<a class="back-to-previous" href="javascript:history.back()">Back <span class="visuallyhidden"> to the previous question</span></a>
+	</div>
+
+	<br clear="all">
+
+
+	<h2 class="heading-large" style="padding:0;margin:1em 0 0.5em 0">
+	Changing address
+	</h2>
+
+
+	<div style="float:left;padding-right:2em">
+	<p><strong>Old address</strong><br>
+	12 Downton Road<br>
+	London<br>
+	SE16 E44
+	</p>
+	</div>
+
+	<div style="float:left;padding-right:2em">
+	<img src="/public/images/big-grey-arrow.png" width="128" height="115">
+	</div>
+
+	<div>
+	<p><strong>New address</strong><br>
+	12 Downton Road<br>
+	London<br>
+	SE16 E44
+	</p>
+	</div>
+
+
+	<br clear="all">
+
+
+
+
+
+		
+	
+	<h2 class="heading-medium" style="padding:0;margin:1em 0 0.5em 0">
+	What happens next
+	</h2>
+
+	<form action="evl-3-flow" method="get" class="form">
+		<input type="hidden" name="nextlink" value="driving-home-2">
+
+
+		<ol class="list-number">
+
+		<li>
+		We'll send you a new licence
+		</li>
+
+		<li>
+		Destroy your old licence when you receive your new one
+		</li>
+
+		<li>
+		We can update the address on your vehicles, check the ones you want to:
+		</li>
+
+
+		<div id="vehicles-check">
+			<label for="radio-inline-1" class="block-label" style="border-bottom:#7f7f7f solid 3px;padding-left:50px;margin-bottom:1em">
+
+			<input id="radio-inline-1" type="checkbox" name="confirm" value="tick">
+	            Orange Citroen <i class="reg-mark" style="font-size:120%">CU57&nbsp;ABC</i>
+            </label>
+
+
+            <label for="radio-inline-2" class="block-label" style="border-bottom:#7f7f7f solid 3px;padding-left:50px;margin-bottom:1em">
+
+			<input id="radio-inline-2" type="checkbox" name="confirm" value="tick">
+	            Green Toyota <i class="reg-mark" style="font-size:120%">EAZ&nbsp;123</i>
+            </label>
+
+        </div>
+		
+		</ol>
+
+
+
+
+
+
+    <!-- removed the checkbox, made the progression button double as the statement of agreement -->
+	<div class="form-group" style="margin:0.5em 0 2.75em 0">
+		<input type="submit" class="button" value="Finish, change my address">
+
+		 <p style="padding:1em 0"><a href="start">Cancel application</a>
+    </div>
+
+
+
+
+
+
+	</form>
+
+                
+
+   
+ </main><!-- / #page-container -->
+{{/content}}
+
+{{$bodyEnd}}
+  {{>includes/elements_scripts}}
+{{/bodyEnd}}
+
+{{/govuk_template}}

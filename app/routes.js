@@ -337,19 +337,9 @@ module.exports = {
     /* Using idealpostcode to get  */
     /* addresses for a postcode    */
 
-    app.get('/examples/elements/evl-find-postcode', function (req, res) {
+    app.get('/examples/elements/driving-find-postcode', function (req, res) {
 
-      /*var Handlebars = require('Handlebars');*/
-      var regmark = req.query.regmark;
-      var email = req.query.email;
-
-
-    if (regmark == undefined) {
-        var defaultreg = 'CU57\xA0ABC';
-    } else {
-        var defaultreg = regmark;
-    }
-
+     
       var postcode = req.query.postcode;
 
       var idealPostcodes = require("ideal-postcodes")("ak_i0ze7k03RQwMtjncypybi4nQOE97T")
@@ -360,7 +350,7 @@ module.exports = {
         }
 
         console.log(results); 
-        res.render('examples/elements/evl-paydd-address.html', {'postcode' : postcode, 'result' : results, 'defaultreg' : defaultreg, 'email' : email})
+        res.render('examples/elements/licence-change-address.html', {'postcode' : postcode, 'result' : results})
 
       });
 
@@ -375,18 +365,9 @@ module.exports = {
     /* full address into a form from   */
     /* the user chosen udprn           */
 
-    app.get('/examples/elements/evl-chosen-address', function (req, res) {
+    app.get('/examples/elements/driving-chosen-address', function (req, res) {
 
-      /*var Handlebars = require('Handlebars');*/
-      var regmark = req.query.regmark;
-      var email = req.query.email;
-
-
-    if (regmark == undefined) {
-        var defaultreg = 'CU57\xA0ABC';
-    } else {
-        var defaultreg = regmark;
-    }
+     
 
       var selectedudp = req.query.udprn;
 
@@ -398,7 +379,7 @@ module.exports = {
         }
 
         console.log(address); 
-        res.render('examples/elements/evl-paydd-address-playback.html', {'address' : address, 'defaultreg' : defaultreg, 'email' : email})
+        res.render('examples/elements/licence-change-address-playback.html', {'address' : address})
 
       });
 

@@ -1,0 +1,178 @@
+{{<govuk_template}}
+
+{{$head}}
+  {{>includes/elements_head}}
+
+    <script type="text/javascript" src="/public/javascripts/jquery-1.11.0.min.js"></script>
+
+    <script type="text/javascript" src="/public/javascripts/application.js"></script>
+
+    <script type="text/javascript" src="/public/javascripts/selection-buttons.js"></script>
+
+    <script type="text/javascript" src="/public/javascripts/parsley.min.js"></script>
+
+
+
+
+{{/head}}
+
+
+{{$propositionHeader}}
+  {{>includes/govuk_drivingprop}}
+{{/propositionHeader}}
+
+{{$headerClass}}with-proposition{{/headerClass}}
+
+
+{{$content}}
+
+
+<link href="/public/stylesheets/application.css" media="screen" rel="stylesheet" type="text/css" />
+
+<link href="/public/stylesheets/numberplate.css" media="screen" rel="stylesheet" type="text/css" />
+
+
+
+<main id="content" role="main" style="padding-bottom:0">
+
+
+
+<div id="back-exit" style="padding-bottom:3em">
+  <div>
+  <a class="back-to-previous" href="javascript:history.back()">Back <span class="visuallyhidden"> to the previous question</span></a>
+  </div>
+
+
+  <div>
+  <a class="verify-signout" href="verify-exit">Sign out <span class="visuallyhidden"> of your Verify account</span></a>
+  </div>
+</div>
+
+
+
+  <br clear="all">
+
+
+
+  <form action="driving-flow" method="get" class="form">
+
+  <input type="hidden" name="nextlink" value="driving-2">
+
+
+  <div id="driver">
+    <h2 class="heading-large" style="padding:0;margin:0 0 0.4em 0">Your driving licence</h2>
+
+    <div class="grid-row">
+      <div class="column-quarter">
+        <div class="summary-box green">
+        <p style="margin-top:0.7em">You have a full driving licence</p>
+        </div>
+      </div>
+
+      <div class="column-quarter">
+        <div class="summary-box amber">
+        <p><span class="bignum">2</span><br>offences</p>
+        </div>
+      </div>
+
+      <div class="column-quarter">
+        <div class="summary-box amber">
+        <p><span class="bignum">6</span><br>points</p>
+        </div>
+      </div>
+
+      <div class="column-quarter">
+        <div class="summary-box green">
+        <p style="margin-top:0.7em">Valid until<br><span style="font-size:120%">25 Feb 2018</span></p>
+        </div>
+      </div>
+    </div>
+
+    <br clear="all">
+
+
+    <!-- Mini licence summary text, there may be too much? -->
+    <ul class="ul-data">
+      <li><span>Name </span><strong>Sarah Marie Morgan</strong>  <a href="licence-name-change">Change</a></li>
+      <li><span>Address </span><strong>12 Downton Road, London, SE16 E44</strong>  <a href="licence-address-change-postcode">Change</a></li>
+
+    <p>This is the summary. <a href="#">View your full licence online.</a>
+
+  </div>
+
+
+
+  <div class="grid-row">
+  <div class="column-two-thirds">
+
+    <h2 class="heading-large" style="padding:0;margin:1em 0 0.4em 0">Your vehicles</h2>
+
+    <p>We found 2 vehicles that you may be registered to you. Use the 11 digit reference from the front of the relevant V5C to confirm that you are the keeper.</p>
+
+
+
+    <div style="margin:1em 0 2em 0">
+          
+      <div style="margin-bottom:2em">
+          <label class="heading-small" for="v5c1" id="">A blue Audi</label>
+
+          <br>
+
+          <input maxlength="11" id="v5c1" class="form-control input-large" type="" data-parsley-trigger="change" autocomplete="off" name="v5c1" style="margin:0.3em 0">
+          <a href="#confirm" style="margin-left:2em">Confirm</a>
+
+          <br>
+          <span style="color:#666">11 digit reference from the front of the V5C</span>
+      </div>
+
+
+      <div>
+          <label class="heading-small" for="v5c2" id="">A green Toyota</label>
+
+          <br>
+
+          <input maxlength="11" id="v5c2" class="form-control input-large" type="" data-parsley-trigger="change" autocomplete="off" name="v5c2" style="margin:0.3em 0">
+          <a href="#confirm" style="margin-left:2em">Confirm</a>
+
+          <br>
+          <span style="color:#666">11 digit reference from the front of the V5C</span>
+      </div>
+
+    </div>
+
+
+   
+
+                
+
+            
+        
+  </div>
+  </div>
+
+
+
+
+
+
+  <!-- Primary buttons, secondary links -->
+  <div class="form-group" >
+    <input type="submit" class="button" value="Continue">
+
+    <!--<p style="padding:1em 0"><a href="start">Cancel application</a>-->
+
+
+
+
+  </div>
+
+</form>
+
+</main><!-- / #page-container -->
+{{/content}}
+
+{{$bodyEnd}}
+  {{>includes/elements_scripts}}
+{{/bodyEnd}}
+
+{{/govuk_template}}
