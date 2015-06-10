@@ -111,15 +111,38 @@
 
 
 
-    <div style="margin:1em 0 2em 0">
-          
+
+
+
+
+    <script type="text/javascript">
+
+
+    $(document).ready(function(){
+
+    $('.show_hide').showHide({
+    speed: 1000, // speed you want the toggle to happen
+    changeText: 1, // if you dont want the button text to change, set this to 0
+    showText: 'View',// the button text to show when a div is closed
+    hideText: '' // the button text to show when a div is open
+
+    });
+
+    });
+    </script>
+
+    <div style="margin:1em 0 2em 0" id="vehicle-claim">
+
       <div style="margin-bottom:2em">
           <label class="heading-small" for="v5c1" id="">A blue Audi</label>
 
           <br>
 
-          <input maxlength="11" id="v5c1" class="form-control input-large" type="" data-parsley-trigger="change" autocomplete="off" name="v5c1" style="margin:0.3em 0">
-          <a href="#confirm" style="margin-left:2em">Confirm</a>
+          <input maxlength="11" id="v5c1" class="form-control input-large" type="number" data-parsley-trigger="change" autocomplete="off" name="v5c1" style="margin:0.3em 0">
+
+                    <a class="show_hide" href="#" rel="#vehicle-1" style="margin-left:2em;">Confirm</a>
+                    <span id="vehicle-1" style="display: none;">CU57&nbsp;ABC</span>
+          
 
           <br>
           <span style="color:#666">11 digit reference from the front of the V5C</span>
@@ -131,8 +154,11 @@
 
           <br>
 
-          <input maxlength="11" id="v5c2" class="form-control input-large" type="" data-parsley-trigger="change" autocomplete="off" name="v5c2" style="margin:0.3em 0">
-          <a href="#confirm" style="margin-left:2em">Confirm</a>
+          <input maxlength="11" id="v5c2" class="form-control input-large" type="number" data-parsley-trigger="change" autocomplete="off" name="v5c2" style="margin:0.3em 0">
+          
+          <a class="show_hide" href="#" rel="#vehicle-2" style="margin-left:2em;">Confirm</a>
+          <span id="vehicle-2" class="reg-mark" style="display:none;margin-left:-0.5em">EAZ&nbsp;123</span>
+
 
           <br>
           <span style="color:#666">11 digit reference from the front of the V5C</span>
@@ -141,10 +167,48 @@
     </div>
 
 
+
+
+
+    <div><details>
+        <summary role="button" aria-controls="details-content-0" tabindex="0" aria-expanded="true" style="padding:0.7em 0 1em 0">
+          <span class="summary">Add a different vehicle</span>
+        </summary>
+
+        <div class="panel-indent" id="details-content-0" aria-hidden="false" style="display:block;">
+
+
+          <div class="grid-row">
+          <div class="column-two-thirds">
+
+            <h2 class="heading-medium" style="margin-top:0">Adding a vehicle</h2>
+
+            <label for="radio-inline-1" class="block-label" style="border-bottom:#7f7f7f solid 3px;padding-left:50px;margin-top:0;margin-bottom:0.66em">
+            <input id="radio-inline-1" type="radio" name="reftype" value="v5c">
+            I've received a new V5C (red logbook) with my name on
+            <br>
+            <img src="/public/images/v5c-diagram.png" width="280" height="162" align="middle" style="padding:0.5em 0 0 0">
+            </label>
+
+
+
+            <label for="radio-inline-2" class="block-label" style="border-bottom:#7f7f7f solid 3px;padding-left:50px;margin-bottom:0">
+            <input id="radio-inline-2" type="radio" name="reftype" value="v5c2">
+            I only have the V5C/2 (green slip)
+            <br>
+            <img src="/public/images/v5c2-diagram.png" width="280" height="162" align="middle" style="padding:0.5em 0 0 0">
+            </label>
+
+
+
+          </div>
+          </div>
+      
+        </div>
+      </details></div>
+
+
    
-
-                
-
             
         
   </div>
@@ -156,7 +220,7 @@
 
 
   <!-- Primary buttons, secondary links -->
-  <div class="form-group" >
+  <div class="form-group" style="margin-top:1em">
     <input type="submit" class="button" value="Continue">
 
     <!--<p style="padding:1em 0"><a href="start">Cancel application</a>-->
